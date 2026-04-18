@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OfferBhai</title>
-
+  <meta charset="UTF-8">
+  <title>OfferBhai - Jamuna Future Park</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <h1>OfferBhai</h1>
-</header>
+<h1>OfferBhai - Jamuna Future Park</h1>
 
-<section class="categories">
-  <h2>Categories</h2>
-  <div class="grid">
-    <button onclick="showOffers('clothing')">Clothing</button>
-    <button onclick="showOffers('restaurant')">Restaurants</button>
-    <button onclick="showOffers('skincare')">Skincare</button>
-  </div>
-</section>
+<!-- Step 1 -->
+<div class="section">
+  <h2>Select Category</h2>
+  <button onclick="selectCategory('men')">Men</button>
+  <button onclick="selectCategory('women')">Women</button>
+  <button onclick="selectCategory('kids')">Kids</button>
+</div>
 
-<section class="offers">
-  <h2>Offers</h2>
-  <div id="offersContainer"></div>
-</section>
+<!-- Step 2 -->
+<div class="section" id="subCategory"></div>
+
+<!-- Step 3 -->
+<div class="section" id="items"></div>
+
+<!-- Step 4 -->
+<div class="section">
+  <h2>Discount Filter</h2>
+  <select id="discountFilter" onchange="showOffers()">
+    <option value="0">All</option>
+    <option value="10">10%+</option>
+    <option value="20">20%+</option>
+    <option value="30">30%+</option>
+    <option value="40">40%+</option>
+  </select>
+</div>
+
+<!-- Step 5 -->
+<div class="section" id="offers"></div>
 
 <script src="script.js"></script>
 
