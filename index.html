@@ -5,11 +5,12 @@
   <title>OfferBhai</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <h1>OfferBhai - Jamuna Future Park</h1>
 
-<!-- MAIN CATEGORY -->
+<!-- CATEGORY -->
 <div class="section">
   <h2>Select Category</h2>
   <button onclick="selectMain('clothing')">Clothing</button>
@@ -23,7 +24,7 @@
 <!-- FILTER -->
 <div class="section">
   <h2>Discount Filter</h2>
-  <select id="discountFilter" onchange="showOffers()">
+  <select id="discountFilter">
     <option value="0">All</option>
     <option value="10">10%+</option>
     <option value="20">20%+</option>
@@ -35,7 +36,8 @@
 <!-- OFFERS -->
 <div class="section" id="offers"></div>
 
-<script src="script.js"></script>
+<!-- IMPORTANT: JS must be here -->
+<script src="./script.js"></script>
 
 </body>
 </html>

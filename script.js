@@ -1,7 +1,9 @@
+console.log("JS Loaded ✅");
+
 let mainCategory = "";
 let selectedItem = "";
 
-// Select main category
+// Select category
 function selectMain(cat) {
   mainCategory = cat;
   document.getElementById("offers").innerHTML = "";
@@ -38,45 +40,13 @@ function selectItem(item) {
   showOffers();
 }
 
-// Generate data
+// Generate offers
 function generateOffers() {
   let data = [];
-  let names = [];
 
-  if (mainCategory === "restaurant") {
-    names = [
-      "Sultan's Dine","Kacchi Bhai","Teheri Ghar","Pizza Hut","KFC",
-      "Burger King","Takeout","Madchef","Chillox","BFC",
-      "Cafe Rio","Food Court 1","Food Court 2","Food Plaza",
-      "Spicy House","Deshi Kitchen","Grill House","Urban Food",
-      "Hot & Spicy","Food Hub","Tasty Bite","Royal Kitchen",
-      "Dhaka Dine","Foodies","Hungry Point","Fast Food Zone",
-      "Street Eat","BBQ Express","Rice Bowl","Burger Lab"
-    ];
-  }
-
-  else if (mainCategory === "skincare") {
-    names = [
-      "The Body Shop","Skin Cafe","Aarong Beauty","Shajgoj",
-      "Beauty Booth","Cosmetics World","Glow Shop","Care Zone",
-      "Beauty Mart","Skin House","Derma Shop","Glow Care",
-      "Fresh Skin","Beauty Hub","Skin Solution","Pure Care",
-      "Natural Glow","Cosmo Shop","Skin Lab","Beauty Store",
-      "Glow Point","Skin Center","Beauty Corner","Skin Plus",
-      "Derma Care","Beauty Choice","Glow World","Skin Studio",
-      "Care Beauty","Skin Mart"
-    ];
-  }
-
-  else {
-    for (let i = 1; i <= 30; i++) {
-      names.push("Clothing Shop " + i);
-    }
-  }
-
-  for (let i = 0; i < 30; i++) {
+  for (let i = 1; i <= 30; i++) {
     data.push({
-      name: names[i],
+      name: mainCategory + " Shop " + i,
       discount: Math.floor(Math.random() * 50) + 10
     });
   }
@@ -103,4 +73,4 @@ function showOffers() {
       </div>
     `;
   });
-}git add .
+}
