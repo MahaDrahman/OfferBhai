@@ -1,75 +1,67 @@
-console.log("JS Loaded ✅");
-
-let mainCategory = "";
+let category = "";
 let selectedItem = "";
 
-// Select category
-function selectMain(cat) {
-  mainCategory = cat;
+function selectCategory(cat) {
+  category = cat;
   document.getElementById("offers").innerHTML = "";
   showItems();
 }
 
-// Show items
 function showItems() {
-  const itemsDiv = document.getElementById("items");
-  itemsDiv.innerHTML = "<h2>Select Item</h2>";
+  const div = document.getElementById("items");
+  div.innerHTML = "<h4>Select Item</h4>";
 
   let items = [];
 
-  if (mainCategory === "clothing") {
+  if (category === "clothing") {
     items = ["Shirt", "Pant", "T-Shirt", "Punjabi"];
-  }
-
-  else if (mainCategory === "restaurant") {
+  } 
+  else if (category === "food") {
     items = ["Kacchi", "Teheri", "Fried Rice", "Burger"];
-  }
-
-  else if (mainCategory === "skincare") {
+  } 
+  else {
     items = ["Serum", "Moisturizer", "Sunscreen", "Toner", "Face Wash"];
   }
 
   items.forEach(i => {
-    itemsDiv.innerHTML += `<button onclick="selectItem('${i}')">${i}</button>`;
+    div.innerHTML += `<button class="btn btn-outline-dark m-2" onclick="selectItem('${i}')">${i}</button>`;
   });
 }
 
-// Select item
 function selectItem(item) {
   selectedItem = item;
   showOffers();
 }
 
-// Generate offers
 function generateOffers() {
-  let data = [];
-
-  for (let i = 1; i <= 30; i++) {
-    data.push({
-      name: mainCategory + " Shop " + i,
+  let arr = [];
+  for (let i = 1; i <= 12; i++) {
+    arr.push({
+      name: category + " Shop " + i,
       discount: Math.floor(Math.random() * 50) + 10
     });
   }
-
-  return data;
+  return arr;
 }
 
-// Show offers
 function showOffers() {
-  let offers = generateOffers();
-  let min = document.getElementById("discountFilter").value;
+  let data = generateOffers();
+  let min = document.getElementById("filter").value;
 
-  offers = offers.filter(o => o.discount >= min);
-  offers.sort((a, b) => b.discount - a.discount);
+  data = data.filter(o => o.discount >= min);
+  data.sort((a,b) => b.discount - a.discount);
 
   const container = document.getElementById("offers");
-  container.innerHTML = `<h2>Offers for ${selectedItem}</h2>`;
+  container.innerHTML = "";
 
-  offers.forEach(o => {
+  data.forEach(o => {
     container.innerHTML += `
-      <div class="card">
-        <h3>${o.name}</h3>
-        <p>Discount: ${o.discount}%</p>
+      <div class="col-md-3 mb-3">
+        <div class="card p-3 text-center">
+          <h5>${o.name}</h5>
+          <p class="text-success">${o.discount}% OFF</p>
+          <button class="btn btn-sm btn-primary">View Deal</button>
+        </div>
       </div>
     `;
   });
