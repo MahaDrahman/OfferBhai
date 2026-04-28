@@ -292,6 +292,12 @@ footer strong{color:var(--gold);}
         <div class="dash-desc">বিউটি ও স্কিন প্রোডাক্ট</div>
         <div class="dash-count">৮০+ অফার</div>
       </div>
+      <div class="dash-card" onclick="openCat('shoes')">
+  <span class="dash-icon">👟</span>
+  <div class="dash-name">জুতা</div>
+  <div class="dash-desc">স্যান্ডেল, স্নিকার্স ও আরও</div>
+  <div class="dash-count">৯০+ অফার</div>
+</div>
 
     </div>
   </div>
@@ -341,30 +347,59 @@ const cats = {
     name:'পোশাক', emoji:'👗',
     desc:'ফ্যাশন থেকে ক্যাজুয়াল — সব ধরনের পোশাকের অফার',
     subs: [
-      {id:'man',   name:'পুরুষ',   icon:'👔', desc:'শার্ট, প্যান্ট, পাঞ্জাবি'},
-      {id:'woman', name:'মহিলা',   icon:'👗', desc:'শাড়ি, সালোয়ার, ওড়না'},
-      {id:'kid',   name:'শিশু',    icon:'🧒', desc:'ছেলেমেয়ে সব বয়সের'},
+      {
+        id:'man',
+        name:'পুরুষ',
+        icon:'👔',
+        desc:'শার্ট, প্যান্ট, পাঞ্জাবি',
+      },
+      {
+        id:'woman',
+        name:'মহিলা',
+        icon:'👗',
+        desc:'থ্রি পিস, টু পিস',
+      },
+      {
+        id:'kid',
+        name:'শিশু',
+        icon:'🧒',
+        desc:'শিশুদের পোশাক',
+      }
     ]
   },
+
   restaurant: {
     name:'রেস্তোরাঁ', emoji:'🍽️',
-    desc:'ঢাকার সেরা রেস্তোরাঁয় ডিসকাউন্ট ও কুপন',
+    desc:'সেরা খাবারের অফার',
     subs: [
-      {id:'kacchi',    name:'কাচ্চি',     icon:'🍖', desc:'বিরিয়ানি হাউস অফার'},
-      {id:'teheri',    name:'তেহারি',     icon:'🍛', desc:'তেহারি ঘরের ডিল'},
-      {id:'khichuri',  name:'খিচুরি',     icon:'🥘', desc:'বৃষ্টির দিনের প্রিয়'},
-      {id:'friedrice', name:'ফ্রাইড রাইস', icon:'🍱', desc:'চাইনিজ রেস্তোরাঁ'},
+      {id:'teheri', name:'তেহারি', icon:'🍛', desc:'তেহারি অফার'},
+      {id:'kacchi', name:'কাচ্চি', icon:'🍖', desc:'কাচ্চি বিরিয়ানি'},
+      {id:'khichuri', name:'খিচুরি', icon:'🥘', desc:'দেশি খাবার'},
+      {id:'halim', name:'হালিম', icon:'🍲', desc:'হালিম অফার'},
+      {id:'friedrice', name:'ফ্রাইড রাইস', icon:'🍱', desc:'চাইনিজ খাবার'}
     ]
   },
+
   skincare: {
     name:'স্কিন কেয়ার', emoji:'✨',
-    desc:'লোশন, ক্রিম ও বিউটি প্রোডাক্টে সেরা দাম',
+    desc:'স্কিন প্রোডাক্ট',
     subs: [
-      {id:'lotion', name:'লোশন', icon:'🧴', desc:'বডি ও ফেস লোশন'},
+      {id:'lotion', name:'লোশন', icon:'🧴', desc:'লশন'},
+      {id:'powder', name:'পাউডার', icon:'💨', desc:'পাউডার'},
+      {id:'cream', name:'ক্রিম', icon:'🧴', desc:'ক্রিম'}
+    ]
+  },
+
+  shoes: {
+    name:'জুতা', emoji:'👟',
+    desc:'বিভিন্ন ধরনের জুতা',
+    subs: [
+      {id:'sandals', name:'স্যান্ডেল', icon:'👡', desc:'স্যান্ডেল'},
+      {id:'sneakers', name:'স্নিকার্স', icon:'👟', desc:'স্নিকার্স'},
+      {id:'formal', name:'ফরমাল জুতা', icon:'👞', desc:'ফরমাল'}
     ]
   }
 };
-
 // Brand pools
 const brandPools = {
   man:       ['Aarong Men','Yellow','Ecstasy','Sailor','Cats Eye Men','Manush Man','Fabrics','Status','Richman','Duke'],
