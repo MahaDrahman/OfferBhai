@@ -23,15 +23,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Hind Siliguri',sans-serif;min-height:100vh;}
-
-/* NAV */
-nav{
-  background:var(--dark);
-  padding:0 2.5rem;
-  display:flex;align-items:center;justify-content:space-between;
-  height:64px;position:sticky;top:0;z-index:200;
-  box-shadow:0 2px 16px rgba(0,0,0,0.18);
-}
+nav{background:var(--dark);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:200;box-shadow:0 2px 16px rgba(0,0,0,0.18);}
 .logo{font-family:'Exo 2',sans-serif;font-size:1.8rem;font-weight:900;color:#fff;letter-spacing:-1px;}
 .logo span{color:var(--gold);}
 .nav-right{display:flex;align-items:center;gap:1.2rem;}
@@ -39,212 +31,101 @@ nav{
 .nav-right a:hover{color:#fff;}
 .nav-btn{background:var(--accent);color:#fff;border:none;padding:.45rem 1.2rem;border-radius:6px;font-family:'Hind Siliguri',sans-serif;font-weight:700;cursor:pointer;font-size:.9rem;transition:background .2s;}
 .nav-btn:hover{background:#c42d08;}
-
-/* BREADCRUMB */
-.breadcrumb{
-  background:var(--surface);
-  border-bottom:1px solid var(--border);
-  padding:.7rem 2.5rem;
-  display:flex;align-items:center;gap:.5rem;
-  font-size:.85rem;color:var(--muted);
-}
+.breadcrumb{background:var(--surface);border-bottom:1px solid var(--border);padding:.7rem 2.5rem;display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--muted);}
 .breadcrumb span{cursor:pointer;transition:color .2s;}
 .breadcrumb span:hover{color:var(--accent);}
 .breadcrumb .sep{color:var(--border);}
 .breadcrumb .active{color:var(--accent);font-weight:600;}
-
-/* PAGES */
 .page{display:none;animation:fadeIn .35s ease;}
 .page.active{display:block;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
-
-/* HERO */
-.hero{
-  background:linear-gradient(135deg,var(--dark) 0%,#3a1a08 100%);
-  padding:4rem 2.5rem 3.5rem;text-align:center;
-  position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(232,56,13,.18),transparent 70%);
-  pointer-events:none;
-}
+.hero{background:linear-gradient(135deg,var(--dark) 0%,#3a1a08 100%);padding:4rem 2.5rem 3.5rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(232,56,13,.18),transparent 70%);pointer-events:none;}
 .hero h1{font-family:'Exo 2',sans-serif;font-size:clamp(2rem,5vw,3.8rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:.8rem;}
 .hero h1 em{font-style:normal;color:var(--gold);}
 .hero p{color:rgba(255,255,255,.65);font-size:1.05rem;margin-bottom:2rem;}
 .hero-badge{display:inline-block;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.4);color:var(--gold);padding:.35rem 1rem;border-radius:999px;font-size:.82rem;font-weight:600;margin-bottom:1.2rem;}
-
-/* DASHBOARD CARDS */
 .dashboard{max-width:1100px;margin:0 auto;padding:3rem 1.5rem;}
 .dash-title{font-family:'Exo 2',sans-serif;font-size:1.5rem;font-weight:900;margin-bottom:1.8rem;text-align:center;}
 .dash-title span{color:var(--accent);}
 .dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-
-.dash-card{
-  background:var(--surface);border:2px solid var(--border);border-radius:20px;
-  padding:2.2rem 1.5rem;text-align:center;cursor:pointer;
-  transition:transform .25s,box-shadow .25s,border-color .25s;
-  position:relative;overflow:hidden;
-}
-.dash-card::before{
-  content:'';position:absolute;inset:0;
-  background:var(--card-gradient,linear-gradient(135deg,#fff8f5,#fff));
-  opacity:0;transition:opacity .25s;
-}
+.dash-card{background:var(--surface);border:2px solid var(--border);border-radius:20px;padding:2.2rem 1.5rem;text-align:center;cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden;}
+.dash-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#fff8f5,#fff);opacity:0;transition:opacity .25s;}
 .dash-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px var(--glow);border-color:var(--accent);}
 .dash-card:hover::before{opacity:1;}
 .dash-card:hover .dash-icon{transform:scale(1.15);}
-
 .dash-icon{font-size:3.5rem;margin-bottom:1rem;display:block;transition:transform .3s;position:relative;z-index:1;}
 .dash-name{font-family:'Exo 2',sans-serif;font-size:1.3rem;font-weight:900;margin-bottom:.4rem;position:relative;z-index:1;}
 .dash-desc{color:var(--muted);font-size:.85rem;position:relative;z-index:1;}
-.dash-count{
-  display:inline-block;margin-top:.8rem;
-  background:var(--accent);color:#fff;
-  padding:.2rem .7rem;border-radius:999px;font-size:.75rem;font-weight:700;
-  position:relative;z-index:1;
-}
-
-/* SUBCATEGORY PAGE */
-.sub-hero{
-  background:linear-gradient(120deg,var(--dark),#2a1205);
-  padding:2.5rem 2.5rem 2rem;text-align:center;
-  border-bottom:3px solid var(--accent);
-}
+.dash-count{display:inline-block;margin-top:.8rem;background:var(--accent);color:#fff;padding:.2rem .7rem;border-radius:999px;font-size:.75rem;font-weight:700;position:relative;z-index:1;}
+.sub-hero{background:linear-gradient(120deg,var(--dark),#2a1205);padding:2.5rem 2.5rem 2rem;text-align:center;border-bottom:3px solid var(--accent);}
 .sub-hero .cat-emoji{font-size:3rem;margin-bottom:.5rem;display:block;}
 .sub-hero h2{font-family:'Exo 2',sans-serif;color:#fff;font-size:1.8rem;font-weight:900;margin-bottom:.3rem;}
 .sub-hero p{color:rgba(255,255,255,.6);font-size:.9rem;}
-
-.sub-grid-wrap{max-width:1000px;margin:0 auto;padding:2.5rem 1.5rem;}
+.sub-grid-wrap{max-width:1000px;margin:0 auto;padding:2rem 1.5rem;}
 .sub-grid-title{font-family:'Exo 2',sans-serif;font-size:1.2rem;font-weight:900;margin-bottom:1.2rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
-.sub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
-
-.sub-card{
-  background:var(--surface);border:2px solid var(--border);border-radius:14px;
-  padding:1.5rem 1rem;text-align:center;cursor:pointer;
-  transition:all .25s;
+/* Group section header */
+.sub-section-label{
+  font-family:'Exo 2',sans-serif;font-size:1rem;font-weight:900;
+  color:var(--accent);text-transform:uppercase;letter-spacing:1px;
+  margin:1.8rem 0 .9rem;padding:.4rem 0;
+  border-bottom:2px solid var(--border);
+  display:flex;align-items:center;gap:.6rem;
 }
+.sub-section-label:first-child{margin-top:0;}
+.sub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:.9rem;margin-bottom:.5rem;}
+.sub-card{background:var(--surface);border:2px solid var(--border);border-radius:14px;padding:1.4rem 1rem;text-align:center;cursor:pointer;transition:all .25s;}
 .sub-card:hover{border-color:var(--accent);background:#fff8f5;transform:translateY(-3px);box-shadow:var(--shadow);}
-.sub-card .sub-icon{font-size:2.2rem;margin-bottom:.6rem;display:block;}
-.sub-card .sub-name{font-weight:700;font-size:1rem;}
-.sub-card .sub-count{color:var(--muted);font-size:.8rem;margin-top:.3rem;}
-
-/* OFFERS PAGE */
-.offers-hero{
-  background:linear-gradient(120deg,#1a0808,#3a1008);
-  padding:2rem 2.5rem;
-  display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;
-}
+.sub-card .sub-icon{font-size:2rem;margin-bottom:.6rem;display:block;}
+.sub-card .sub-name{font-weight:700;font-size:.95rem;}
+.sub-card .sub-count{color:var(--muted);font-size:.78rem;margin-top:.3rem;}
+.offers-hero{background:linear-gradient(120deg,#1a0808,#3a1008);padding:2rem 2.5rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;}
 .offers-hero-left .tag{background:rgba(232,56,13,.2);color:#ff7a5a;border:1px solid rgba(232,56,13,.3);padding:.2rem .7rem;border-radius:999px;font-size:.75rem;font-weight:600;margin-bottom:.5rem;display:inline-block;}
 .offers-hero-left h2{font-family:'Exo 2',sans-serif;color:#fff;font-size:1.6rem;font-weight:900;}
 .offers-hero-left p{color:rgba(255,255,255,.55);font-size:.85rem;margin-top:.2rem;}
 .offers-hero-right{margin-left:auto;}
 .offer-count-badge{background:var(--gold);color:var(--dark);font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.1rem;padding:.5rem 1.2rem;border-radius:10px;}
-
 .offers-wrap{max-width:1200px;margin:0 auto;padding:2rem 1.5rem;}
-
-/* FILTER BAR */
-.filter-bar{
-  display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;margin-bottom:1.8rem;
-  background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;
-}
-.filter-bar input{
-  flex:1;min-width:180px;border:1px solid var(--border);border-radius:8px;
-  padding:.55rem 1rem;font-family:'Hind Siliguri',sans-serif;font-size:.9rem;
-  outline:none;background:var(--bg);transition:border-color .2s;
-}
+.filter-bar{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;margin-bottom:1.8rem;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;}
+.filter-bar input{flex:1;min-width:180px;border:1px solid var(--border);border-radius:8px;padding:.55rem 1rem;font-family:'Hind Siliguri',sans-serif;font-size:.9rem;outline:none;background:var(--bg);transition:border-color .2s;}
 .filter-bar input:focus{border-color:var(--accent);}
 .filter-chip{background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.8rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
 .filter-chip.on{background:var(--accent);border-color:var(--accent);color:#fff;}
-
 .offers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.1rem;}
-
-.offer-card{
-  background:var(--surface);border:1.5px solid var(--border);border-radius:14px;
-  overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s;
-  cursor:pointer;
-}
+.offer-card{background:var(--surface);border:1.5px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s;cursor:pointer;}
 .offer-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1);border-color:var(--accent);}
-
-.oc-top{
-  padding:1.1rem 1.1rem .7rem;
-  display:flex;align-items:flex-start;gap:.7rem;
-}
-.oc-brand-logo{
-  width:46px;height:46px;border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.5rem;flex-shrink:0;
-  background:var(--bg);border:1px solid var(--border);
-}
+.oc-top{padding:1.1rem 1.1rem .7rem;display:flex;align-items:flex-start;gap:.7rem;}
+.oc-brand-logo{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;background:var(--bg);border:1px solid var(--border);}
 .oc-info{flex:1;}
 .oc-brand{font-size:.72rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.8px;}
 .oc-title{font-size:.92rem;font-weight:600;line-height:1.4;margin-top:.1rem;}
-.oc-badge{
-  font-size:.7rem;font-weight:800;
-  background:var(--accent);color:#fff;
-  padding:.15rem .5rem;border-radius:5px;
-  flex-shrink:0;font-family:'Exo 2',sans-serif;
-}
-
+.oc-badge{font-size:.7rem;font-weight:800;background:var(--accent);color:#fff;padding:.15rem .5rem;border-radius:5px;flex-shrink:0;font-family:'Exo 2',sans-serif;}
 .oc-mid{padding:0 1.1rem .8rem;border-bottom:1px dashed var(--border);}
 .oc-prices{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.6rem;}
 .oc-new{font-family:'Exo 2',sans-serif;font-size:1.15rem;font-weight:900;color:var(--accent);}
 .oc-old{font-size:.82rem;color:var(--muted);text-decoration:line-through;}
 .oc-save{font-size:.75rem;color:#1a9a4a;font-weight:700;background:#e8f7ef;padding:.1rem .45rem;border-radius:4px;}
-
-.oc-coupon{
-  display:flex;align-items:center;gap:.5rem;
-  background:#fffbf0;border:1.5px dashed var(--gold);border-radius:7px;
-  padding:.4rem .7rem;
-}
+.oc-coupon{display:flex;align-items:center;gap:.5rem;background:#fffbf0;border:1.5px dashed var(--gold);border-radius:7px;padding:.4rem .7rem;}
 .oc-coupon-code{font-family:'Exo 2',sans-serif;font-size:.82rem;font-weight:700;color:#b07d00;flex:1;letter-spacing:1px;}
 .oc-copy{background:none;border:none;cursor:pointer;font-size:.8rem;color:var(--muted);transition:color .2s;padding:0;}
 .oc-copy:hover{color:var(--gold);}
-
 .oc-bot{padding:.7rem 1.1rem;display:flex;align-items:center;justify-content:space-between;}
 .oc-expiry{font-size:.75rem;color:var(--muted);}
 .oc-expiry b{color:#e03030;}
 .oc-fav{background:none;border:none;cursor:pointer;font-size:1rem;transition:transform .2s;}
 .oc-fav:hover{transform:scale(1.3);}
-
-/* TOAST */
-.toast{
-  position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(60px);
-  background:var(--dark);color:#fff;padding:.65rem 1.4rem;border-radius:8px;
-  font-size:.88rem;z-index:999;opacity:0;transition:all .3s;pointer-events:none;
-  border-left:3px solid var(--gold);
-}
+.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(60px);background:var(--dark);color:#fff;padding:.65rem 1.4rem;border-radius:8px;font-size:.88rem;z-index:999;opacity:0;transition:all .3s;pointer-events:none;border-left:3px solid var(--gold);}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
-
-/* BACK BTN */
-.back-btn{
-  display:inline-flex;align-items:center;gap:.4rem;
-  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);
-  color:#fff;padding:.4rem 1rem;border-radius:7px;
-  cursor:pointer;font-family:'Hind Siliguri',sans-serif;font-size:.85rem;
-  transition:background .2s;margin-bottom:.8rem;
-}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;padding:.4rem 1rem;border-radius:7px;cursor:pointer;font-family:'Hind Siliguri',sans-serif;font-size:.85rem;transition:background .2s;margin-bottom:.8rem;}
 .back-btn:hover{background:rgba(255,255,255,.18);}
-
-/* FOOTER */
 footer{background:var(--dark);color:rgba(255,255,255,.45);text-align:center;padding:1.5rem;font-size:.82rem;margin-top:3rem;}
 footer strong{color:var(--gold);}
-
-/* RESPONSIVE */
-@media(max-width:640px){
-  .dash-grid{grid-template-columns:1fr;}
-  nav{padding:0 1rem;}
-  .hero{padding:2.5rem 1rem 2rem;}
-  .offers-hero{padding:1.2rem 1rem;}
-}
-@media(max-width:800px){
-  .dash-grid{grid-template-columns:1fr 1fr;}
-}
+@media(max-width:640px){.dash-grid{grid-template-columns:1fr;}nav{padding:0 1rem;}.hero{padding:2.5rem 1rem 2rem;}.offers-hero{padding:1.2rem 1rem;}.sub-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}}
+@media(max-width:800px){.dash-grid{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo" onclick="goHome()" style="cursor:pointer">Offer<span>Bhai</span></div>
   <div class="nav-right">
@@ -255,64 +136,55 @@ footer strong{color:var(--gold);}
   </div>
 </nav>
 
-<!-- BREADCRUMB -->
 <div class="breadcrumb" id="breadcrumb">
   <span onclick="goHome()">🏠 হোম</span>
 </div>
 
-<!-- PAGE: DASHBOARD -->
+<!-- DASHBOARD -->
 <div class="page active" id="page-dashboard">
   <div class="hero">
     <div class="hero-badge">🔥 বাংলাদেশের #১ অফার প্ল্যাটফর্ম</div>
     <h1>সেরা <em>ডিসকাউন্ট</em> খুঁজুন<br/>এক জায়গায়</h1>
     <p>হাজারো ব্র্যান্ডের কুপন কোড ও অফার — সবকিছু OfferBhai-তে</p>
   </div>
-
   <div class="dashboard">
     <div class="dash-title">ক্যাটাগরি বেছে নিন <span>↓</span></div>
     <div class="dash-grid">
-
       <div class="dash-card" onclick="openCat('clothes')">
         <span class="dash-icon">👗</span>
         <div class="dash-name">পোশাক</div>
         <div class="dash-desc">ফ্যাশন, ড্রেস ও আরও অনেক কিছু</div>
         <div class="dash-count">১৫০+ অফার</div>
       </div>
-
       <div class="dash-card" onclick="openCat('restaurant')">
         <span class="dash-icon">🍽️</span>
         <div class="dash-name">রেস্তোরাঁ</div>
         <div class="dash-desc">খাবারে সেরা ডিসকাউন্ট পান</div>
         <div class="dash-count">২০০+ অফার</div>
       </div>
-
       <div class="dash-card" onclick="openCat('skincare')">
         <span class="dash-icon">✨</span>
         <div class="dash-name">স্কিন কেয়ার</div>
-        <div class="dash-desc">বিউটি ও স্কিন প্রোডাক্ট</div>
-        <div class="dash-count">৮০+ অফার</div>
+        <div class="dash-desc">ফেস কেয়ার ও হেয়ার কেয়ার প্রোডাক্ট</div>
+        <div class="dash-count">৩০০+ অফার</div>
       </div>
       <div class="dash-card" onclick="openCat('shoes')">
-  <span class="dash-icon">👟</span>
-  <div class="dash-name">জুতা</div>
-  <div class="dash-desc">স্যান্ডেল, স্নিকার্স ও আরও</div>
-  <div class="dash-count">৯০+ অফার</div>
-</div>
-
+        <span class="dash-icon">👟</span>
+        <div class="dash-name">জুতা</div>
+        <div class="dash-desc">স্যান্ডেল, স্নিকার্স ও আরও</div>
+        <div class="dash-count">৯০+ অফার</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- PAGE: SUBCATEGORY -->
+<!-- SUBCATEGORY -->
 <div class="page" id="page-sub">
   <div class="sub-hero" id="sub-hero-content"></div>
-  <div class="sub-grid-wrap">
-    <div class="sub-grid-title">বিভাগ বেছে নিন</div>
-    <div class="sub-grid" id="sub-grid"></div>
-  </div>
+  <div class="sub-grid-wrap" id="sub-grid-wrap"></div>
 </div>
 
-<!-- PAGE: OFFERS -->
+<!-- OFFERS -->
 <div class="page" id="page-offers">
   <div class="offers-hero">
     <div class="offers-hero-left">
@@ -324,7 +196,6 @@ footer strong{color:var(--gold);}
       <div class="offer-count-badge">🎯 ৫০টি অফার</div>
     </div>
   </div>
-
   <div class="offers-wrap">
     <div class="filter-bar">
       <input type="text" id="offerSearch" placeholder="🔍 অফার খুঁজুন..." oninput="renderOffers()"/>
@@ -337,202 +208,174 @@ footer strong{color:var(--gold);}
 </div>
 
 <div class="toast" id="toast"></div>
-
 <footer><strong>OfferBhai</strong> — সেরা অফার, এক জায়গায় &copy; ২০২৫</footer>
 
 <script>
-// ============ DATA ============
 const cats = {
   clothes: {
     name:'পোশাক', emoji:'👗',
     desc:'ফ্যাশন থেকে ক্যাজুয়াল — সব ধরনের পোশাকের অফার',
-    subs: [
-      {
-        id:'man',
-        name:'পুরুষ',
-        icon:'👔',
-        desc:'শার্ট, প্যান্ট, পাঞ্জাবি',
-      },
-      {
-        id:'woman',
-        name:'মহিলা',
-        icon:'👗',
-        desc:'থ্রি পিস, টু পিস',
-      },
-      {
-        id:'kid',
-        name:'শিশু',
-        icon:'🧒',
-        desc:'শিশুদের পোশাক',
-      }
+    grouped:false,
+    subs:[
+      {id:'man',   name:'পুরুষ',  icon:'👔', desc:'শার্ট, প্যান্ট, পাঞ্জাবি'},
+      {id:'woman', name:'মহিলা', icon:'👗', desc:'থ্রি পিস, টু পিস'},
+      {id:'kid',   name:'শিশু',   icon:'🧒', desc:'শিশুদের পোশাক'}
     ]
   },
-
-  restaurant: {
+  restaurant:{
     name:'রেস্তোরাঁ', emoji:'🍽️',
     desc:'সেরা খাবারের অফার',
-    subs: [
-      {id:'teheri', name:'তেহারি', icon:'🍛', desc:'তেহারি অফার'},
-      {id:'kacchi', name:'কাচ্চি', icon:'🍖', desc:'কাচ্চি বিরিয়ানি'},
-      {id:'khichuri', name:'খিচুরি', icon:'🥘', desc:'দেশি খাবার'},
-      {id:'halim', name:'হালিম', icon:'🍲', desc:'হালিম অফার'},
+    grouped:false,
+    subs:[
+      {id:'teheri',    name:'তেহারি',      icon:'🍛', desc:'তেহারি অফার'},
+      {id:'kacchi',    name:'কাচ্চি',      icon:'🍖', desc:'কাচ্চি বিরিয়ানি'},
+      {id:'khichuri',  name:'খিচুরি',      icon:'🥘', desc:'দেশি খাবার'},
+      {id:'halim',     name:'হালিম',       icon:'🍲', desc:'হালিম অফার'},
       {id:'friedrice', name:'ফ্রাইড রাইস', icon:'🍱', desc:'চাইনিজ খাবার'}
     ]
   },
-
-  skincare: {
+  skincare:{
     name:'স্কিন কেয়ার', emoji:'✨',
-    desc:'স্কিন প্রোডাক্ট',
-    subs: [
-      {id:'lotion', name:'লোশন', icon:'🧴', desc:'লশন'},
-      {id:'powder', name:'পাউডার', icon:'💨', desc:'পাউডার'},
-      {id:'cream', name:'ক্রিম', icon:'🧴', desc:'ক্রিম'}
+    desc:'মুখ ও চুলের সেরা কেয়ার প্রোডাক্ট',
+    grouped:true,
+    groups:[
+      {
+        label:'🌸 ফেস কেয়ার',
+        subs:[
+          {id:'facewash',    name:'ফেস ওয়াশ',    icon:'🧼', desc:'ফেস ওয়াশ অফার'},
+          {id:'cleanser',    name:'ক্লেনজার',     icon:'💧', desc:'ক্লেনজার অফার'},
+          {id:'facescrub',   name:'ফেস স্ক্রাব',  icon:'🌿', desc:'এক্সফোলিয়েটিং স্ক্রাব'},
+          {id:'toner',       name:'টোনার',        icon:'🫙', desc:'স্কিন টোনার অফার'},
+          {id:'moisturizer', name:'ময়শ্চারাইজার', icon:'🧴', desc:'ময়শ্চারাইজার অফার'},
+          {id:'facemask',    name:'ফেস মাস্ক',    icon:'🎭', desc:'ফেস মাস্ক অফার'},
+          {id:'serum',       name:'সিরাম',        icon:'💎', desc:'ফেস সিরাম অফার'}
+        ]
+      },
+      {
+        label:'💆 হেয়ার কেয়ার',
+        subs:[
+          {id:'hairoil',     name:'হেয়ার অয়েল',  icon:'🫒', desc:'চুলের তেল অফার'},
+          {id:'hairmask',    name:'হেয়ার মাস্ক',  icon:'🌺', desc:'হেয়ার মাস্ক অফার'},
+          {id:'shampoo',     name:'শ্যাম্পু',      icon:'🚿', desc:'শ্যাম্পু অফার'},
+          {id:'conditioner', name:'কন্ডিশনার',    icon:'🌊', desc:'কন্ডিশনার অফার'},
+          {id:'hairserum',   name:'হেয়ার সিরাম',  icon:'⭐', desc:'হেয়ার সিরাম অফার'}
+        ]
+      }
     ]
   },
-
-  shoes: {
+  shoes:{
     name:'জুতা', emoji:'👟',
     desc:'বিভিন্ন ধরনের জুতা',
-    subs: [
-      {id:'sandals', name:'স্যান্ডেল', icon:'👡', desc:'স্যান্ডেল'},
-      {id:'sneakers', name:'স্নিকার্স', icon:'👟', desc:'স্নিকার্স'},
-      {id:'formal', name:'ফরমাল জুতা', icon:'👞', desc:'ফরমাল'}
+    grouped:false,
+    subs:[
+      {id:'sandals',  name:'স্যান্ডেল',   icon:'👡', desc:'স্যান্ডেল'},
+      {id:'sneakers', name:'স্নিকার্স',   icon:'👟', desc:'স্নিকার্স'},
+      {id:'formal',   name:'ফরমাল জুতা', icon:'👞', desc:'ফরমাল'}
     ]
   }
 };
-// Brand pools
+
 const brandPools = {
-  man:       ['Aarong Men','Yellow','Ecstasy','Sailor','Cats Eye Men','Manush Man','Fabrics','Status','Richman','Duke'],
-  woman:     ['Aarong','Nipun','Infinity','Rang','Deshi Dosh','Kay Kraft','Nagordola','Deshal','Ritu','Bijlee'],
-  kid:       ['Babies & Moms','Baby Shop BD','Toddler Zone','KidZone','Little Champs','TinyTots','Mini Fashion','BabyWear','KidsCare','Lil Stars'],
-  kacchi:    ['Star Kacchi','Haji Biryani','Sultana Kacchi','Fakhruddin','Al-Razzaque','Old Dhaka Kacchi','Royal Kacchi','Premium Kacchi','City Kacchi','Noor Kacchi'],
-  teheri:    ['Bismillah Teheri','Ahad Teheri','Dhaka Teheri House','Ruposhi Teheri','Khan Teheri','Old Dhaka Teheri','Star Teheri','Sohag Teheri','Amena Teheri','City Teheri'],
-  khichuri:  ['Deshi Khichuri','Bari Ghar','Ranna Ghor','Jharna Khichuri','Amma Kitchen','Nanu Bari','Khichuri House','Green Kitchen','Priti Khichuri','Meghna Khana'],
-  friedrice: ['Chinese Garden','Dragon Palace','Wok & Roll','Orient Express','Golden Dragon','Panda Restaurant','Shanghai Kitchen','Bamboo Garden','Eastern Spice','China Town'],
-  lotion:    ['POND\'S BD','Vaseline BD','Neutrogena BD','Himalaya BD','Cetaphil BD','Dove BD','Parachute','Ayur','Nature\'s Essence','Lacto Calamine'],
+  man:         ['Aarong Men','Yellow','Ecstasy','Sailor','Cats Eye Men','Manush Man','Fabrics','Status','Richman','Duke'],
+  woman:       ['Aarong','Nipun','Infinity','Rang','Deshi Dosh','Kay Kraft','Nagordola','Deshal','Ritu','Bijlee'],
+  kid:         ['Babies & Moms','Baby Shop BD','Toddler Zone','KidZone','Little Champs','TinyTots','Mini Fashion','BabyWear','KidsCare','Lil Stars'],
+  kacchi:      ['Star Kacchi','Haji Biryani','Sultana Kacchi','Fakhruddin','Al-Razzaque','Old Dhaka Kacchi','Royal Kacchi','Premium Kacchi','City Kacchi','Noor Kacchi'],
+  teheri:      ['Bismillah Teheri','Ahad Teheri','Dhaka Teheri House','Ruposhi Teheri','Khan Teheri','Old Dhaka Teheri','Star Teheri','Sohag Teheri','Amena Teheri','City Teheri'],
+  khichuri:    ['Deshi Khichuri','Bari Ghar','Ranna Ghor','Jharna Khichuri','Amma Kitchen','Nanu Bari','Khichuri House','Green Kitchen','Priti Khichuri','Meghna Khana'],
+  halim:       ['Haji Halim','Star Halim','Dhaka Halim House','Sohag Halim','Old Dhaka Halim','Premium Halim','Royal Halim','City Halim','Green Halim','Amena Halim'],
+  friedrice:   ['Chinese Garden','Dragon Palace','Wok & Roll','Orient Express','Golden Dragon','Panda Restaurant','Shanghai Kitchen','Bamboo Garden','Eastern Spice','China Town'],
+  facewash:    ["POND'S BD",'Himalaya BD','Cetaphil BD','Garnier BD','Neutrogena BD','Clean & Clear','St.Ives BD','Dove Face','Mamaearth BD','Simple BD'],
+  cleanser:    ['Cetaphil BD','La Roche-Posay','CeraVe BD','The Ordinary BD','Simple BD','Bioderma BD','Garnier Micellar','Neutrogena Cleanser','Dermalogica BD',"Paula's Choice"],
+  facescrub:   ['St.Ives BD','Himalaya Scrub',"POND'S Scrub",'Neutrogena Scrub','Mamaearth Scrub','WOW Skincare','Plum BD','Biotique BD','Forest Essentials','Kama Ayurveda'],
+  toner:       ['The Ordinary BD','Klairs BD',"Paula's Choice",'COSRX BD','Thayers BD','Pixi BD','Laneige BD','Innisfree BD','Some By Mi','Missha BD'],
+  moisturizer: ['Cetaphil BD','CeraVe BD','Neutrogena BD','Vaseline BD',"POND'S BD",'Olay BD','Nivea BD','La Roche-Posay','Aveeno BD','Bioderma BD'],
+  facemask:    ['Garnier Mask','Freeman BD','The Face Shop','Innisfree Mask','COSRX Mask','TonyMoly BD','Mediheal BD','SNP BD','Leaders BD','Dr.Jart BD'],
+  serum:       ['The Ordinary BD','COSRX BD','Olay Serum','Garnier Serum',"L'Oreal Serum",'Neutrogena Serum','Plum Serum','Mamaearth Serum','Klairs Serum',"Paula's Choice"],
+  hairoil:     ['Parachute BD','Bajaj Almond','Dabur Amla','Vatika BD','Kérastase BD','Matrix BD','Livon BD','Indulekha BD','Navratna BD','Hair & Care'],
+  hairmask:    ['Kérastase Mask','TRESemmé Mask','Dove Hair Mask','Pantene Mask','Schwarzkopf BD',"L'Oreal Mask",'Wella BD','Himalaya Hair','Matrix Mask','OGX BD'],
+  shampoo:     ['Head & Shoulders','Pantene BD','TRESemmé BD','Dove Shampoo',"L'Oreal BD",'Sunsilk BD','Rejoice BD','Clinic Plus','Kérastase BD','Schwarzkopf BD'],
+  conditioner: ['Pantene BD','Dove Conditioner','TRESemmé Cond.',"L'Oreal Cond.",'Kérastase Cond.','OGX BD','Garnier Hair','Wella Cond.','Sunsilk Cond.','Matrix Cond.'],
+  hairserum:   ['Livon BD','Schwarzkopf BD','Kérastase Serum',"L'Oreal Serum",'TRESemmé Serum','OGX Serum','Wella Serum','Matrix Serum','Pantene Serum','Streax BD'],
+  sandals:     ['Bata BD','Apex BD','Bay Emporium','Jennys BD','Leatherex','Fortuna BD','Keds BD','Birkenstock BD','Action BD','Comfort Zone'],
+  sneakers:    ['Bata BD','Apex BD','Adidas BD','Nike BD','Puma BD','New Balance','Reebok BD','Converse BD','Vans BD','Fila BD'],
+  formal:      ['Bata Formal','Apex Formal','Bay Shoes','Jennys Formal','Leatherex','Fortuna Formal','Clarks BD','Hush Puppies','Ecco BD','Red Tape BD'],
 };
 
-const adjectives = ['স্পেশাল','মেগা','এক্সক্লুসিভ','ধামাকা','বাম্পার','আনলিমিটেড','সুপার','ফ্লাশ','গ্র্যান্ড','ফেস্টিভ'];
-const offerTypes = ['ডিসকাউন্ট অফার','সেল অফার','ক্যাশব্যাক ডিল','কুপন অফার','বান্ডেল ডিল','মেম্বার অফার','ফ্ল্যাট ছাড়','সিজনাল অফার','বোনাস ডিল','প্রিমিয়াম অফার'];
-const expiries = ['আজই শেষ','২ দিন বাকি','৩ দিন বাকি','৫ দিন বাকি','৭ দিন বাকি','১০ দিন বাকি','১৫ দিন বাকি','মাসের শেষ পর্যন্ত','সীমিত সময়','৩০ দিন বাকি'];
-const emojis = {man:'👔',woman:'👗',kid:'🧒',kacchi:'🍖',teheri:'🍛',khichuri:'🥘',friedrice:'🍱',lotion:'🧴'};
+const adjectives=['স্পেশাল','মেগা','এক্সক্লুসিভ','ধামাকা','বাম্পার','আনলিমিটেড','সুপার','ফ্লাশ','গ্র্যান্ড','ফেস্টিভ'];
+const offerTypes=['ডিসকাউন্ট অফার','সেল অফার','ক্যাশব্যাক ডিল','কুপন অফার','বান্ডেল ডিল','মেম্বার অফার','ফ্ল্যাট ছাড়','সিজনাল অফার','বোনাস ডিল','প্রিমিয়াম অফার'];
+const expiries=['আজই শেষ','২ দিন বাকি','৩ দিন বাকি','৫ দিন বাকি','৭ দিন বাকি','১০ দিন বাকি','১৫ দিন বাকি','মাসের শেষ পর্যন্ত','সীমিত সময়','৩০ দিন বাকি'];
+const emojis={man:'👔',woman:'👗',kid:'🧒',kacchi:'🍖',teheri:'🍛',khichuri:'🥘',halim:'🍲',friedrice:'🍱',facewash:'🧼',cleanser:'💧',facescrub:'🌿',toner:'🫙',moisturizer:'🧴',facemask:'🎭',serum:'💎',hairoil:'🫒',hairmask:'🌺',shampoo:'🚿',conditioner:'🌊',hairserum:'⭐',sandals:'👡',sneakers:'👟',formal:'👞'};
 
-function generateOffers(subId) {
-  const brands = brandPools[subId] || [];
-  const offers = [];
-  for (let i = 0; i < 50; i++) {
-    const brand = brands[i % brands.length];
-    const adj = adjectives[i % adjectives.length];
-    const type = offerTypes[i % offerTypes.length];
-    const discount = 10 + Math.floor(Math.random() * 61); // 10–70%
-    const original = (500 + Math.floor(Math.random() * 4500));
-    const discounted = Math.round(original * (1 - discount / 100));
-    const saved = original - discounted;
-    const coupon = (brand.replace(/[^A-Za-z]/g,'').substring(0,4).toUpperCase()) + (discount) + String.fromCharCode(65 + (i % 26));
-    offers.push({
-      id: i + 1,
-      brand,
-      title: `${brand} — ${adj} ${type}`,
-      emoji: emojis[subId] || '🛍️',
-      discount,
-      original,
-      discounted,
-      saved,
-      coupon,
-      expiry: expiries[i % expiries.length],
-    });
+function generateOffers(subId){
+  const brands=brandPools[subId]||['Brand A','Brand B','Brand C','Brand D','Brand E'];
+  const offers=[];
+  for(let i=0;i<50;i++){
+    const brand=brands[i%brands.length];
+    const discount=10+Math.floor(Math.random()*61);
+    const original=500+Math.floor(Math.random()*4500);
+    const discounted=Math.round(original*(1-discount/100));
+    const saved=original-discounted;
+    const coupon=(brand.replace(/[^A-Za-z]/g,'').substring(0,4).toUpperCase())+(discount)+String.fromCharCode(65+(i%26));
+    offers.push({id:i+1,brand,title:`${brand} — ${adjectives[i%adjectives.length]} ${offerTypes[i%offerTypes.length]}`,emoji:emojis[subId]||'🛍️',discount,original,discounted,saved,coupon,expiry:expiries[i%expiries.length]});
   }
   return offers;
 }
 
-// ============ STATE ============
-let currentCat = null;
-let currentSub = null;
-let allOffers = [];
-let favs = new Set();
-let sortMode = 'default';
+let currentCat=null,currentSub=null,allOffers=[],favs=new Set(),sortMode='default';
 
-// ============ NAVIGATION ============
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
 
-function goHome() {
-  currentCat = null; currentSub = null;
-  setBreadcrumb([{label:'🏠 হোম', action:null}]);
-  showPage('dashboard');
-}
+function goHome(){currentCat=null;currentSub=null;setBreadcrumb([{label:'🏠 হোম',action:null}]);showPage('dashboard');}
 
-function openCat(catId) {
-  currentCat = catId;
-  const cat = cats[catId];
-  setBreadcrumb([
-    {label:'🏠 হোম', action:'goHome()'},
-    {label:cat.name, action:null}
-  ]);
-
-  // hero
-  document.getElementById('sub-hero-content').innerHTML = `
-    <button class="back-btn" onclick="goHome()">← ফিরে যান</button>
-    <span class="cat-emoji">${cat.emoji}</span>
-    <h2>${cat.name}</h2>
-    <p>${cat.desc}</p>
-  `;
-
-  // sub grid
-  const grid = document.getElementById('sub-grid');
-  grid.innerHTML = cat.subs.map(s => `
-    <div class="sub-card" onclick="openSub('${catId}','${s.id}')">
-      <span class="sub-icon">${s.icon}</span>
-      <div class="sub-name">${s.name}</div>
-      <div class="sub-count">${s.desc}</div>
-    </div>
-  `).join('');
-
+function openCat(catId){
+  currentCat=catId;
+  const cat=cats[catId];
+  setBreadcrumb([{label:'🏠 হোম',action:'goHome()'},{label:cat.name,action:null}]);
+  document.getElementById('sub-hero-content').innerHTML=`<button class="back-btn" onclick="goHome()">← ফিরে যান</button><span class="cat-emoji">${cat.emoji}</span><h2>${cat.name}</h2><p>${cat.desc}</p>`;
+  const wrap=document.getElementById('sub-grid-wrap');
+  if(cat.grouped){
+    let html='';
+    cat.groups.forEach(group=>{
+      html+=`<div class="sub-section-label">${group.label}</div><div class="sub-grid">`;
+      html+=group.subs.map(s=>`<div class="sub-card" onclick="openSub('${catId}','${s.id}')"><span class="sub-icon">${s.icon}</span><div class="sub-name">${s.name}</div><div class="sub-count">${s.desc}</div></div>`).join('');
+      html+=`</div>`;
+    });
+    wrap.innerHTML=html;
+  } else {
+    wrap.innerHTML=`<div class="sub-grid-title">বিভাগ বেছে নিন</div><div class="sub-grid">${cat.subs.map(s=>`<div class="sub-card" onclick="openSub('${catId}','${s.id}')"><span class="sub-icon">${s.icon}</span><div class="sub-name">${s.name}</div><div class="sub-count">${s.desc}</div></div>`).join('')}</div>`;
+  }
   showPage('sub');
 }
 
-function openSub(catId, subId) {
-  currentCat = catId; currentSub = subId;
-  const cat = cats[catId];
-  const sub = cat.subs.find(s => s.id === subId);
-
-  setBreadcrumb([
-    {label:'🏠 হোম', action:'goHome()'},
-    {label:cat.name, action:`openCat('${catId}')`},
-    {label:sub.name, action:null}
-  ]);
-
-  document.getElementById('offers-tag').textContent = cat.name + ' › ' + sub.name;
-  document.getElementById('offers-heading').textContent = sub.icon + ' ' + sub.name + ' অফার';
-  document.getElementById('offers-sub').textContent = sub.desc + ' — সেরা ৫০টি ডিল';
-
-  allOffers = generateOffers(subId);
-  sortMode = 'default';
+function openSub(catId,subId){
+  currentCat=catId;currentSub=subId;
+  const cat=cats[catId];
+  let sub=null;
+  if(cat.grouped){cat.groups.forEach(g=>{const f=g.subs.find(s=>s.id===subId);if(f)sub=f;});}
+  else{sub=cat.subs.find(s=>s.id===subId);}
+  if(!sub)return;
+  setBreadcrumb([{label:'🏠 হোম',action:'goHome()'},{label:cat.name,action:`openCat('${catId}')`},{label:sub.name,action:null}]);
+  document.getElementById('offers-tag').textContent=cat.name+' › '+sub.name;
+  document.getElementById('offers-heading').textContent=sub.icon+' '+sub.name+' অফার';
+  document.getElementById('offers-sub').textContent=sub.desc+' — সেরা ৫০টি ডিল';
+  allOffers=generateOffers(subId);
+  sortMode='default';
   document.querySelectorAll('.filter-chip').forEach((c,i)=>c.classList.toggle('on',i===0));
-  document.getElementById('offerSearch').value = '';
+  document.getElementById('offerSearch').value='';
   renderOffers();
   showPage('offers');
 }
 
-function renderOffers() {
-  const q = document.getElementById('offerSearch').value.toLowerCase();
-  let list = [...allOffers].filter(o =>
-    o.brand.toLowerCase().includes(q) || o.title.toLowerCase().includes(q)
-  );
-  if (sortMode === 'discount') list.sort((a,b) => b.discount - a.discount);
-  if (sortMode === 'price') list.sort((a,b) => a.discounted - b.discounted);
-
-  document.getElementById('offers-grid').innerHTML = list.map(o => `
+function renderOffers(){
+  const q=document.getElementById('offerSearch').value.toLowerCase();
+  let list=[...allOffers].filter(o=>o.brand.toLowerCase().includes(q)||o.title.toLowerCase().includes(q));
+  if(sortMode==='discount')list.sort((a,b)=>b.discount-a.discount);
+  if(sortMode==='price')list.sort((a,b)=>a.discounted-b.discounted);
+  document.getElementById('offers-grid').innerHTML=list.map(o=>`
     <div class="offer-card">
       <div class="oc-top">
         <div class="oc-brand-logo">${o.emoji}</div>
-        <div class="oc-info">
-          <div class="oc-brand">${o.brand}</div>
-          <div class="oc-title">${o.title}</div>
-        </div>
+        <div class="oc-info"><div class="oc-brand">${o.brand}</div><div class="oc-title">${o.title}</div></div>
         <div class="oc-badge">-${o.discount}%</div>
       </div>
       <div class="oc-mid">
@@ -554,39 +397,11 @@ function renderOffers() {
   `).join('');
 }
 
-function setSort(el, mode) {
-  sortMode = mode;
-  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('on'));
-  el.classList.add('on');
-  renderOffers();
-}
-
-function toggleFav(id, btn) {
-  if (favs.has(id)) { favs.delete(id); btn.textContent='🤍'; }
-  else { favs.add(id); btn.textContent='❤️'; showToast('❤️ ফেভারিটে যোগ হয়েছে!'); }
-}
-
-function copyCoupon(code) {
-  navigator.clipboard.writeText(code).catch(()=>{});
-  showToast('✅ "'+code+'" কপি হয়েছে!');
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2200);
-}
-
-function setBreadcrumb(items) {
-  const bc = document.getElementById('breadcrumb');
-  bc.innerHTML = items.map((item, i) => {
-    const isLast = i === items.length - 1;
-    const el = isLast
-      ? `<span class="active">${item.label}</span>`
-      : `<span onclick="${item.action}">${item.label}</span>`;
-    return (i > 0 ? '<span class="sep">›</span>' : '') + el;
-  }).join('');
-}
+function setSort(el,mode){sortMode=mode;document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('on'));el.classList.add('on');renderOffers();}
+function toggleFav(id,btn){if(favs.has(id)){favs.delete(id);btn.textContent='🤍';}else{favs.add(id);btn.textContent='❤️';showToast('❤️ ফেভারিটে যোগ হয়েছে!');}}
+function copyCoupon(code){navigator.clipboard.writeText(code).catch(()=>{});showToast('✅ "'+code+'" কপি হয়েছে!');}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
+function setBreadcrumb(items){document.getElementById('breadcrumb').innerHTML=items.map((item,i)=>{const isLast=i===items.length-1;const el=isLast?`<span class="active">${item.label}</span>`:`<span onclick="${item.action}">${item.label}</span>`;return(i>0?'<span class="sep">›</span>':'')+el;}).join('');}
 </script>
 </body>
 </html>
