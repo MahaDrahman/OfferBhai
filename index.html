@@ -15,8 +15,7 @@
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Hind Siliguri',sans-serif;min-height:100vh;}
 
-/* NAV */ 
-
+/* NAV */
 nav{background:var(--dark);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:200;box-shadow:0 2px 16px rgba(0,0,0,0.18);}
 .logo{font-family:'Exo 2',sans-serif;font-size:1.8rem;font-weight:900;color:#fff;letter-spacing:-1px;cursor:pointer;}
 .logo span{color:var(--gold);}
@@ -61,7 +60,6 @@ nav{background:var(--dark);padding:0 2.5rem;display:flex;align-items:center;just
 .modal-switch a{color:var(--accent);font-weight:700;cursor:pointer;text-decoration:none;}
 
 /* BREADCRUMB */
-
 .breadcrumb{background:var(--surface);border-bottom:1px solid var(--border);padding:.7rem 2.5rem;display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--muted);}
 .breadcrumb span{cursor:pointer;transition:color .2s;}
 .breadcrumb span:hover{color:var(--accent);}
@@ -352,7 +350,7 @@ footer strong{color:var(--gold);}
 </div>
 
 <div class="toast" id="toast"></div>
-<footer><strong>OfferBhai</strong> — সেরা অফার, এক জায়গায় &copy; ২০২৬ </footer>
+<footer><strong>OfferBhai</strong> — সেরা অফার, এক জায়গায় &copy; ২০২৫</footer>
 
 <script>
 /* ===================== DATA ===================== */
@@ -721,7 +719,7 @@ function openLeaf(catId, leafId, leafName, leafIcon, parentSubId){
       {label:parentSub?parentSub.name:'',action:`openSub('${catId}','${parentSubId}')`},
       {label:leafName,action:null}
     ]);
-  } else { 
+  } else {
     setBreadcrumb([
       {label:'🏠 হোম',action:'goHome()'},
       {label:cat.name,action:`openCat('${catId}')`},
@@ -812,7 +810,7 @@ function setBreadcrumb(items){
   }).join('');
 }
 
-
+/* ESC to close modal */
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 </script>
 </body>
